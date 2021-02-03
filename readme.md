@@ -33,6 +33,20 @@ python-ta/
 # src/app.py
 
 def solution(n):
+    source = []
+    for letter in n:
+        letter = letter.strip()
+        letter = letter.lower()
+        if len(letter) <= 0:
+            continue
+        source.append(letter)
+    account = (len(source) - 1)
+    for entry in source:
+        if entry == source[account]:
+            account -= 1
+            continue
+    if account == -1:
+        print(n)
     # your code goes here
 
 
